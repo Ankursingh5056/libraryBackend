@@ -11,7 +11,7 @@ const app = express();
 // app.use(cors());
 app.use(express.json());
 app.use(cors({
-  origin: "*"
+  origin: "https://library-frontend-icz1.vercel.app/"
 }));
 
 
@@ -26,3 +26,5 @@ app.use("/api/mybooks", require("./routes/myBookRoutes"));
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => console.log(`🚀 Server running on port ${PORT}`));
+module.exports = app; //  Vercel requires exporting the app instead of listening
+
